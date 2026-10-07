@@ -1,4 +1,5 @@
 import Bubbles from '../components/Bubbles'
+import { publicUrl } from '../lib/publicUrl.js'
 import {
   CARE_PROGRAM,
   CONTACT,
@@ -33,7 +34,7 @@ export default function Home() {
             </div>
           </div>
           <div className="hero__visual">
-            <img src="/logo.png" alt="Maskottchen – Bär wäscht ein Auto" className="hero__logo" />
+            <img src={publicUrl('logo.png')} alt="Maskottchen – Bär wäscht ein Auto" className="hero__logo" />
           </div>
         </div>
       </section>
