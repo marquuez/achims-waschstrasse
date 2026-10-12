@@ -10,14 +10,20 @@ export const CONTACT = {
 }
 
 export const OPENING_HOURS = [
-  { day: 'Montag', hours: '08:00–19:00' },
-  { day: 'Dienstag', hours: '08:00–19:00' },
-  { day: 'Mittwoch', hours: '08:00–19:00' },
-  { day: 'Donnerstag', hours: '08:00–19:00' },
-  { day: 'Freitag', hours: '08:00–19:00' },
-  { day: 'Samstag', hours: '08:00–19:00' },
+  { day: 'Montag', hours: '08:00–18:30' },
+  { day: 'Dienstag', hours: '08:00–18:30' },
+  { day: 'Mittwoch', hours: '08:00–18:30' },
+  { day: 'Donnerstag', hours: '08:00–18:30' },
+  { day: 'Freitag', hours: '08:00–18:30' },
+  { day: 'Samstag', hours: '08:00–18:30' },
   { day: 'Sonntag', hours: 'Geschlossen', closed: true },
 ]
+
+export const TAX_INFO = {
+  office: 'Finanzamt Wiedenbrück',
+  taxNumber: '347/5166/1012',
+  vatId: 'DE289075977',
+}
 
 export const CARE_PROGRAM = [
   {
@@ -31,7 +37,7 @@ export const CARE_PROGRAM = [
     icon: '🧽',
   },
   {
-    title: 'Wachs',
+    title: 'Premium\u00ADversiegelung',
     description: 'Schutz und Glanz für lang anhaltende Sauberkeit.',
     icon: '✨',
   },
@@ -40,56 +46,52 @@ export const CARE_PROGRAM = [
     description: 'Hochleistungstrocknung für streifenfreies Ergebnis.',
     icon: '💨',
   },
+  {
+    title: 'Politur',
+    description: 'Ceramic-Politur für extra Tiefenglanz und Lackschutz.',
+    icon: '🔆',
+  },
+]
+
+const PLATIN_FEATURES = [
+  'Intensiv-Vorwäsche inkl. Felgen',
+  'Schaumwand',
+  'Unterbodenwäsche',
+  'Ceramic-Politur',
+  'Glanztrocknung',
+  'Premiumversiegelung (Wachs)',
 ]
 
 export const PRICING = [
   {
-    name: 'Premium',
-    price: '21,- €',
-    features: [
-      'Schaumteppich',
-      'Felgenreinigung',
-      'ShineTecs Polierstation',
-      'Hochdruck-BPS',
-      'Unterbodenwäsche',
-      'Hochleistungstrocknung',
-      'Microfaser Tuchtrockner',
-    ],
-  },
-  {
-    name: 'Cabrio',
-    price: '18,- €',
-    features: [
-      'Schaumbogen',
-      'Felgenreinigung',
-      'DryGloss Extra (kein Wachs)',
-      'Reduzierter Druck der Dachbürste',
-      'Hochleistungstrocknung',
-      'Microfaser Tuchtrockner',
-    ],
+    name: 'Platin',
+    price: '19,50 €',
+    features: PLATIN_FEATURES,
   },
   {
     name: 'Glanz',
-    price: '18,- €',
+    price: '16,50 €',
     features: [
-      'Schaumbogen',
-      'Felgenreinigung',
-      'Wachs',
-      'Hochdruck-BPS',
-      'Hochleistungstrocknung',
-      'Microfaser Tuchtrockner',
+      'Intensiv-Vorwäsche inkl. Felgen',
+      'Schaumwand',
+      'Premiumversiegelung (Wachs)',
+      'Glanztrockner',
     ],
   },
   {
-    name: 'Wash',
-    price: '15,- €',
-    features: [
-      'Schaumbogen',
-      'Felgenreinigung',
-      'DryGloss Extra',
-      'Hochleistungstrocknung',
-      'Microfaser Tuchtrockner',
-    ],
+    name: 'Intensiv',
+    price: '14,50 €',
+    features: ['Intensiv-Vorwäsche', 'Aktivschaum', 'Unterbodenwäsche', 'Glanztrockner'],
+  },
+  {
+    name: 'Schaumpflege',
+    price: '12,50 €',
+    features: ['Vorwäsche', 'Aktivschaum', 'Glanztrockner'],
+  },
+  {
+    name: 'Pickup und Cabrio',
+    price: '22,50 €',
+    features: [...PLATIN_FEATURES],
   },
 ]
 
@@ -97,7 +99,6 @@ export const VEHICLE_LIMITS = {
   maxHeight: '2,60 m',
   maxWidth: '2,55 m',
   forbidden: [
-    'Pickup',
     'Anhänger',
     'PKW mit Spoileranbauten',
     'Dachträger / Dachboxen',

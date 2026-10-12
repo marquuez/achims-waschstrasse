@@ -317,6 +317,10 @@ main {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.cards--5 {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
 .cards--2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -330,7 +334,21 @@ main {
 }
 
 .card--program {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
+}
+
+.card--program h3 {
+  display: block;
+  width: 100%;
+  margin: 0 auto 0.5rem;
+  text-align: center;
+  font-size: clamp(0.82rem, 1.5vw, 0.98rem);
+  line-height: 1.35;
+  hyphens: manual;
+  overflow-wrap: normal;
 }
 
 .card--warn {
@@ -362,11 +380,15 @@ main {
 
 .pricing-row {
   display: grid;
-  grid-template-columns: minmax(140px, 180px) 1fr auto;
+  grid-template-columns: minmax(140px, 180px) 1fr;
   gap: 1rem;
   align-items: center;
   padding: 1.25rem 1.5rem;
   border-bottom: 1px solid #e3e8e5;
+}
+
+.pricing-row--priced {
+  grid-template-columns: minmax(140px, 180px) 1fr auto;
 }
 
 .pricing-row:last-child {
@@ -477,6 +499,16 @@ main {
   gap: 1rem;
 }
 
+.footer__legal {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #bbb;
+}
+
+.footer__legal p {
+  margin: 0.15rem 0;
+}
+
 .instagram-fab {
   position: fixed;
   left: 1.25rem;
@@ -531,6 +563,7 @@ main {
 @media (max-width: 900px) {
   .hero__grid,
   .cards--4,
+  .cards--5,
   .cards--2,
   .contact-grid {
     grid-template-columns: 1fr;

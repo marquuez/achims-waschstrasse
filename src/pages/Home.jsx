@@ -44,9 +44,9 @@ export default function Home() {
         <div className="container">
           <header className="section__header">
             <h2>Unser Pflegeprogramm</h2>
-            <p>Vier Schritte für ein strahlend sauberes Ergebnis.</p>
+            <p>Fünf Schritte für ein strahlend sauberes Ergebnis.</p>
           </header>
-          <div className="cards cards--4">
+          <div className="cards cards--5">
             {CARE_PROGRAM.map((step) => (
               <article key={step.title} className="card card--program">
                 <span className="card__icon" aria-hidden="true">
@@ -63,14 +63,16 @@ export default function Home() {
       <section id="preise" className="section">
         <div className="container">
           <header className="section__header">
-            <h2>EASY – Waschprogramme</h2>
-            <p>Transparente Preise für jeden Bedarf.</p>
+            <h2>Unsere Waschprogramme</h2>
+            <p>Fünf Programme – Leistungen und Preise im Überblick.</p>
           </header>
           <div className="pricing-list">
             {PRICING.map((plan) => (
-              <article key={plan.name} className="pricing-row">
+              <article
+                key={plan.name}
+                className={`pricing-row${plan.price ? ' pricing-row--priced' : ''}`}
+              >
                 <div className="pricing-row__brand">
-                  <span className="pricing-row__easy">EASY</span>
                   <span className="pricing-row__name">{plan.name}</span>
                 </div>
                 <ul className="pricing-row__features">
@@ -78,7 +80,7 @@ export default function Home() {
                     <li key={feature}>{feature}</li>
                   ))}
                 </ul>
-                <p className="pricing-row__price">{plan.price}</p>
+                {plan.price ? <p className="pricing-row__price">{plan.price}</p> : null}
               </article>
             ))}
           </div>
