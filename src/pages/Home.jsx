@@ -67,12 +67,13 @@ export default function Home() {
             <p>Fünf Programme – Leistungen und Preise im Überblick.</p>
           </header>
           <div className="pricing-list">
-            {PRICING.map((plan) => (
+            {PRICING.map((plan, index) => (
               <article
                 key={plan.name}
                 className={`pricing-row${plan.price ? ' pricing-row--priced' : ''}`}
               >
                 <div className="pricing-row__brand">
+                  <span className="pricing-row__number">{index + 1}.</span>
                   <span className="pricing-row__name">{plan.name}</span>
                 </div>
                 <ul className="pricing-row__features">

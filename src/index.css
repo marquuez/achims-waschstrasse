@@ -403,6 +403,16 @@ main {
   font-size: 0.85rem;
 }
 
+.pricing-row__number {
+  display: block;
+  font-family: var(--font);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--green-dark);
+  line-height: 1.2;
+  margin-bottom: 0.15rem;
+}
+
 .pricing-row__name {
   display: block;
   font-family: var(--font-script);
