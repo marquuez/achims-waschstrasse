@@ -133,7 +133,10 @@ await banner.clone().png().toFile(pub('logo-banner.png'))
     .resize({ width: R.width * 2, kernel: 'lanczos3' })
     .sharpen({ sigma: 1.1 })
     .png()
-    .toFile(pub('mascot.png'))
+    .toBuffer()
+    // Unterkante nach unten verlängern (letzte Zeile wird kopiert), damit Körper
+    // und Schwanz auf der Website bis hinter den Bogen reichen – kein grüner Spalt
+    .then((buf) => sharp(buf).extend({ bottom: 70, extendWith: 'copy' }).png().toFile(pub('mascot.png')))
 }
 
 // Favicon: Kopf des Waschbären

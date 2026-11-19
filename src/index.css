@@ -160,6 +160,9 @@ main {
   width: 100%;
   height: 56px;
   margin-top: -1px;
+  margin-bottom: -1px;
+  /* gleiche Farbe wie der folgende Abschnitt (Pflegeprogramm) */
+  fill: var(--green-soft);
 }
 
 .hero__bubbles {
@@ -290,7 +293,8 @@ main {
   width: min(380px, 100%);
   height: auto;
   object-fit: contain;
-  filter: drop-shadow(0 12px 18px rgba(1, 50, 1, 0.3));
+  /* Unterkante liegt knapp hinter dem Bogen und wird von ihm abgedeckt */
+  margin-bottom: -50px;
 }
 
 .btn {
@@ -914,6 +918,7 @@ main {
 
   .hero__mascot {
     width: min(320px, 90%);
+    margin-bottom: -49px;
   }
 }
 

@@ -43,7 +43,7 @@ export default function Home() {
           </div>
         </div>
         <svg className="hero__swoosh" viewBox="0 0 1440 56" preserveAspectRatio="none" aria-hidden="true">
-          <path d="M0 56 L0 30 Q720 -18 1440 22 L1440 56 Z" fill="#ffffff" />
+          <path d="M0 56 L0 30 Q720 -18 1440 22 L1440 56 Z" />
         </svg>
       </section>
 
