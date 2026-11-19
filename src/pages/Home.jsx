@@ -1,4 +1,5 @@
 import Bubbles from '../components/Bubbles'
+import CarIcon from '../components/CarIcon'
 import { publicUrl } from '../lib/publicUrl.js'
 import {
   CARE_PROGRAM,
@@ -21,22 +22,29 @@ export default function Home() {
             <p className="hero__eyebrow">Waschstraße in Bünde</p>
             <h1>Sauber ist schöner.</h1>
             <p className="hero__lead">
-              Willkommen bei Achims Waschstrasse – moderne Anlage, freundlicher Service und
+              Willkommen bei Achim's Waschstraße – moderne Anlage, freundlicher Service und
               gründliche Pflege für Ihr Fahrzeug.
             </p>
             <div className="hero__actions">
-              <a className="btn btn--primary" href="#preise">
+              <a className="btn btn--light" href="#preise">
                 Preise ansehen
               </a>
-              <a className="btn btn--outline" href={mapsUrl} target="_blank" rel="noopener noreferrer">
+              <a className="btn btn--ghost" href={mapsUrl} target="_blank" rel="noopener noreferrer">
                 Route planen
               </a>
             </div>
           </div>
           <div className="hero__visual">
-            <img src={publicUrl('logo.png')} alt="Maskottchen – Bär wäscht ein Auto" className="hero__logo" />
+            <img
+              src={publicUrl('mascot.png')}
+              alt="Waschbär-Maskottchen von Achim's Waschstraße"
+              className="hero__mascot"
+            />
           </div>
         </div>
+        <svg className="hero__swoosh" viewBox="0 0 1440 56" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0 56 L0 30 Q720 -18 1440 22 L1440 56 Z" fill="#ffffff" />
+        </svg>
       </section>
 
       <section id="programm" className="section section--alt section--bubbles">
@@ -44,7 +52,6 @@ export default function Home() {
         <div className="container">
           <header className="section__header">
             <h2>Unser Pflegeprogramm</h2>
-            <p>Fünf Schritte für ein strahlend sauberes Ergebnis.</p>
           </header>
           <div className="cards cards--5">
             {CARE_PROGRAM.map((step) => (
@@ -64,24 +71,28 @@ export default function Home() {
         <div className="container">
           <header className="section__header">
             <h2>Unsere Waschprogramme</h2>
-            <p>Fünf Programme – Leistungen und Preise im Überblick.</p>
           </header>
           <div className="pricing-list">
             {PRICING.map((plan, index) => (
-              <article
-                key={plan.name}
-                className={`pricing-row${plan.price ? ' pricing-row--priced' : ''}`}
-              >
+              <article key={plan.name} className="pricing-row">
                 <div className="pricing-row__brand">
-                  <span className="pricing-row__number">{index + 1}.</span>
-                  <span className="pricing-row__name">{plan.name}</span>
+                  <CarIcon variant={plan.icon} className="pricing-row__icon" />
+                  <div>
+                    <span className="pricing-row__number">{index + 1}.</span>
+                    <h3 className="pricing-row__name">{plan.name}</h3>
+                  </div>
                 </div>
                 <ul className="pricing-row__features">
                   {plan.features.map((feature) => (
                     <li key={feature}>{feature}</li>
                   ))}
                 </ul>
-                {plan.price ? <p className="pricing-row__price">{plan.price}</p> : null}
+                <div className="pricing-row__aside">
+                  <p className="pricing-row__price">{plan.price}</p>
+                  {plan.freeVacuum ? (
+                    <p className="pricing-row__gift">+ Gratis staubsaugen</p>
+                  ) : null}
+                </div>
               </article>
             ))}
           </div>
@@ -92,7 +103,6 @@ export default function Home() {
         <div className="container">
           <header className="section__header">
             <h2>Fahrzeug-Hinweise</h2>
-            <p>Bitte beachten Sie folgende Grenzen vor der Einfahrt.</p>
           </header>
           <div className="cards cards--2">
             <article className="card">

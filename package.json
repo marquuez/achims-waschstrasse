@@ -9,7 +9,8 @@
     "build:pages": "node scripts/build-pages.mjs",
     "preview": "vite preview",
     "preview:pages": "npm run build:pages && vite preview",
-    "logo:cut": "node scripts/cut-logo.mjs"
+    "logo:cut": "node scripts/cut-logo.mjs",
+    "brand:assets": "node scripts/make-brand-assets.mjs"
   },
   "dependencies": {
     "react": "^19.0.0",

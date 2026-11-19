@@ -1,27 +1,62 @@
 import { Link } from 'react-router-dom'
-import { CONTACT, TAX_INFO } from '../data/site'
+import { CONTACT, OPENING_SUMMARY, TAX_INFO } from '../data/site'
+import { homeHash, publicUrl } from '../lib/publicUrl.js'
 
 export default function Footer() {
   const year = new Date().getFullYear()
 
   return (
     <footer className="footer">
-      <div className="footer__inner container">
-        <div>
-          <p className="footer__title">Achims Waschstrasse</p>
-          <p className="footer__text">Sauber ist schöner.</p>
+      <svg className="footer__swoosh" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 48 L0 26 Q720 -14 1440 18 L1440 48 Z" />
+      </svg>
+      <div className="footer__main">
+        <div className="footer__inner container">
+          <div className="footer__brand">
+            <Link to="/" aria-label="Zur Startseite">
+              <img src={publicUrl('wordmark.png')} alt="Achim's Waschstraße" className="footer__logo" />
+            </Link>
+            <p className="footer__slogan">Sauber ist schöner.</p>
+          </div>
+
+          <div className="footer__col">
+            <p className="footer__heading">Kontakt</p>
+            <address className="footer__text">
+              {CONTACT.address}
+              <br />
+              {CONTACT.city}
+              <br />
+              <a href={CONTACT.phoneHref}>{CONTACT.phone}</a>
+              <br />
+              <a href={CONTACT.emailHref}>{CONTACT.email}</a>
+            </address>
+          </div>
+
+          <div className="footer__col">
+            <p className="footer__heading">Öffnungszeiten</p>
+            <p className="footer__text">
+              {OPENING_SUMMARY.label}: {OPENING_SUMMARY.hours}
+              <br />
+              {OPENING_SUMMARY.note}
+            </p>
+            <a className="footer__cta" href={homeHash('preise')}>
+              Zu den Preisen
+            </a>
+          </div>
         </div>
-        <div className="footer__links">
-          <Link to="/datenschutz">Datenschutz</Link>
-          <Link to="/agb">AGB</Link>
-          <a href={CONTACT.emailHref}>{CONTACT.email}</a>
+      </div>
+
+      <div className="footer__bottom">
+        <div className="footer__bottom-inner container">
+          <p className="footer__copy">© {year} Achim's Waschstraße</p>
+          <p className="footer__legal">
+            {TAX_INFO.office} · St.-Nr.: {TAX_INFO.taxNumber} · USt.-IdNr.: {TAX_INFO.vatId}
+          </p>
+          <nav className="footer__links" aria-label="Rechtliches">
+            <Link to="/datenschutz">Datenschutz</Link>
+            <Link to="/agb">AGB</Link>
+          </nav>
         </div>
-        <div className="footer__legal">
-          <p>{TAX_INFO.office}</p>
-          <p>St.-Nr.: {TAX_INFO.taxNumber}</p>
-          <p>USt.-IdNr.: {TAX_INFO.vatId}</p>
-        </div>
-        <p className="footer__copy">© {year} Achims Waschstrasse</p>
       </div>
     </footer>
   )

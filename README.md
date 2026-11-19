@@ -46,7 +46,8 @@ npm run preview
 
 - Kontakt, Öffnungszeiten, Preise: `src/data/site.js`
 - Instagram-Link: Feld `instagram` in `src/data/site.js`
-- Logo: `public/logo.png` (aus `public/logo-source.png`, weißer Rand transparent)
+- Logo: `public/logo.png` (grünes Banner mit Waschbär). Daraus erzeugt `npm run brand:assets` die Grafiken `logo-banner.png`, `wordmark.png` (Header/Footer), `mascot.png` (Startseite) und `favicon.png`.
+- Achtung: `npm run logo:cut` überschreibt `public/logo.png` mit dem alten Logo aus `logo-source.png`.
 - Logo neu erzeugen: `npm run logo:cut`
 
 ## Seiten

@@ -13,10 +13,7 @@ export default function Header() {
     <header className="header">
       <div className="header__inner container">
         <Link to="/" className="header__brand">
-          <img src={publicUrl('logo.png')} alt="Achims Waschstrasse Logo" className="header__logo" />
-          <span className="header__name">
-            Achims <span>Waschstrasse</span>
-          </span>
+          <img src={publicUrl('wordmark.png')} alt="Achim's Waschstraße" className="header__logo" />
         </Link>
         <nav className="header__nav" aria-label="Hauptnavigation">
           {navItems.map((item) => (
