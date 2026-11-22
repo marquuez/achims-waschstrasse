@@ -58,3 +58,5 @@ npm run preview
 - `/datenschutz` – Datenschutzerklärung
 - `/agb` – Allgemeine Geschäftsbedingungen
 - `/impressum` – Impressum
+
+Neue Unterseiten zusätzlich in `scripts/postbuild-pages.mjs` (Liste `PAGES`) eintragen, damit GitHub Pages sie beim direkten Aufruf mit Status 200 ausliefert.
