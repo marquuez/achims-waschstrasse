@@ -33,7 +33,7 @@ export const TAX_INFO = {
 // Impressum: Inhaber/in bzw. Vertretungsberechtigte/r (Pflichtangabe nach § 5 DDG)
 export const IMPRINT = {
   company: "Achim's Waschstraße",
-  owner: '', // z. B. 'Inhaber: Vorname Nachname' – bitte ergänzen
+  owner: 'Geschäftsführer: Christof Lempa',
 }
 
 export const CARE_PROGRAM = [
