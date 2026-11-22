@@ -144,6 +144,92 @@ main {
   color: var(--white);
 }
 
+/* Menü-Knopf (nur Tablet/Handy sichtbar) */
+.header__toggle {
+  display: none;
+  position: relative;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  border: 2px solid rgba(255, 255, 255, 0.55);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+.header__toggle span {
+  position: absolute;
+  left: 11px;
+  right: 11px;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--white);
+  transition: transform 0.2s ease, opacity 0.2s ease, top 0.2s ease;
+}
+
+.header__toggle span:nth-child(1) {
+  top: 13px;
+}
+
+.header__toggle span:nth-child(2) {
+  top: 20.5px;
+}
+
+.header__toggle span:nth-child(3) {
+  top: 28px;
+}
+
+.header--open .header__toggle span:nth-child(1) {
+  top: 20.5px;
+  transform: rotate(45deg);
+}
+
+.header--open .header__toggle span:nth-child(2) {
+  opacity: 0;
+}
+
+.header--open .header__toggle span:nth-child(3) {
+  top: 20.5px;
+  transform: rotate(-45deg);
+}
+
+.header__toggle:focus-visible,
+.header__link:focus-visible {
+  outline: 3px solid var(--lime);
+  outline-offset: 2px;
+}
+
+@media (max-width: 1024px) {
+  .header__toggle {
+    display: block;
+  }
+
+  .header__nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.15rem;
+    padding: 0.6rem 1rem 1rem;
+    background: var(--green);
+    box-shadow: 0 14px 24px rgba(1, 77, 1, 0.3);
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  .header--open .header__nav {
+    display: flex;
+  }
+
+  .header__link {
+    padding: 0.7rem 0.9rem;
+    border-radius: 12px;
+    font-size: 1.05rem;
+  }
+}
+
 .hero {
   position: relative;
   overflow: hidden;
@@ -586,9 +672,16 @@ main {
 
 .pricing-row__price {
   margin: 0;
+  padding: 0.35rem 0.95rem;
+  border-radius: 12px;
+  font-family: var(--font-display);
   font-size: 1.9rem;
-  font-weight: 900;
-  color: var(--green-light);
+  font-weight: 400;
+  color: var(--white);
+  background: linear-gradient(135deg, var(--green-light), var(--green-deep));
+  border: 2px solid var(--white);
+  box-shadow: 0 6px 16px rgba(1, 77, 1, 0.28);
+  transform: rotate(-6deg);
   line-height: 1.1;
   white-space: nowrap;
 }
@@ -806,6 +899,798 @@ main {
   color: #777;
 }
 
+/* ---------- 404 ---------- */
+.not-found {
+  text-align: center;
+}
+
+.not-found__mascot {
+  width: 180px;
+  margin: 0 auto 0.5rem;
+}
+
+.not-found p {
+  margin: 0 auto 1.5rem;
+  max-width: 46ch;
+}
+
+/* ---------- Unsere Anlage ---------- */
+.feature {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.feature + .feature {
+  margin-top: 3.5rem;
+}
+
+.feature--reverse .feature__text {
+  order: 2;
+}
+
+.feature--reverse {
+  grid-template-columns: 1fr 1fr;
+}
+
+.feature__text h3 {
+  margin: 0.35rem 0 0.75rem;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  line-height: 1.1;
+  color: var(--green);
+  text-transform: uppercase;
+}
+
+.feature__text p {
+  margin: 0 0 1rem;
+  font-size: 1.05rem;
+}
+
+.feature__eyebrow {
+  font-weight: 800;
+  font-size: 0.85rem !important;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--green-light);
+  margin: 0 !important;
+}
+
+.feature__badge {
+  display: inline-block;
+  margin: 0 !important;
+  padding: 0.25rem 0.9rem;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--green-light), var(--green-deep));
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 1.15rem !important;
+  text-transform: uppercase;
+  transform: rotate(-4deg);
+  box-shadow: 0 6px 16px rgba(1, 77, 1, 0.25);
+}
+
+.feature__list {
+  font-weight: 700;
+}
+
+.feature__list li::marker {
+  color: var(--green-light);
+}
+
+.feature__media {
+  margin: 0;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 4px solid var(--white);
+  box-shadow: var(--shadow), 0 0 0 1px rgba(2, 138, 2, 0.12);
+}
+
+.feature__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* WashTec-Foto: unten weich in Markengrün auslaufen lassen */
+.feature__media--washtec {
+  position: relative;
+  background: var(--green-deep);
+}
+
+.feature__media--washtec::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 72%, rgba(1, 77, 1, 0.55) 86%, var(--green-deep) 100%);
+  pointer-events: none;
+}
+
+.feature__caption {
+  position: absolute;
+  left: 1.1rem;
+  right: 1.1rem;
+  bottom: 0.9rem;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  line-height: 1.1;
+  color: var(--white);
+  text-transform: uppercase;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.25);
+}
+
+.feature__caption span {
+  padding: 0.15rem 0.6rem;
+  border-radius: 8px;
+  background: var(--white);
+  color: var(--green);
+  text-shadow: none;
+  transform: rotate(-5deg);
+}
+
+/* ---------- Achims Waschkarte ---------- */
+.washcard {
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 0;
+  color: var(--white);
+  background: linear-gradient(135deg, var(--green-deep) 0%, var(--green) 55%, var(--green-light) 100%);
+}
+
+.washcard__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.washcard__header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.washcard__badge {
+  display: inline-block;
+  margin: 0;
+  padding: 0.2rem 1rem;
+  border-radius: 10px;
+  background: var(--white);
+  color: var(--green);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  transform: rotate(-6deg);
+  box-shadow: 0 6px 16px rgba(1, 77, 1, 0.3);
+}
+
+.washcard__header h2 {
+  margin: 0.6rem 0 0.25rem;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.05;
+  text-transform: uppercase;
+  text-shadow: 0 3px 0 rgba(1, 77, 1, 0.35);
+}
+
+.washcard__claim {
+  margin: 0;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #eaf6e8;
+}
+
+.washcard__tiers {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.washcard-tier {
+  display: grid;
+  grid-template-columns: 7.5rem auto 1fr auto;
+  align-items: center;
+  gap: 0.75rem;
+  padding-right: 1rem;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--white);
+  color: var(--green-deep);
+  box-shadow: 0 10px 26px rgba(1, 50, 1, 0.3);
+}
+
+.washcard-tier p {
+  margin: 0;
+}
+
+.washcard-tier p > span {
+  display: block;
+  font-family: var(--font);
+  font-size: 0.85rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.washcard-tier__charge {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.85rem 1.4rem 0.85rem 1rem;
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  line-height: 1;
+  color: var(--white);
+  background: linear-gradient(135deg, var(--green-deep), var(--green-light));
+  clip-path: polygon(0 0, 100% 0, 86% 100%, 0 100%);
+  text-align: center;
+}
+
+.washcard-tier__arrow {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--green-light);
+}
+
+.washcard-tier__credit {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.washcard-tier__bonus {
+  padding: 0.3rem 0.65rem;
+  border-radius: 10px;
+  border: 2px solid var(--white);
+  background: linear-gradient(135deg, var(--green-light), var(--green-deep));
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  line-height: 1;
+  text-align: center;
+  transform: rotate(-7deg);
+  box-shadow: 0 5px 12px rgba(1, 77, 1, 0.3);
+  white-space: nowrap;
+}
+
+.washcard__info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+}
+
+.washcard-graphic {
+  position: relative;
+  flex: none;
+  font-size: 16px;
+  width: 17.5em;
+  aspect-ratio: 1.586;
+  border-radius: 1em;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 20% 85%, rgba(201, 235, 245, 0.55) 0 0.62em, transparent 0.66em),
+    radial-gradient(circle at 34% 72%, rgba(255, 255, 255, 0.6) 0 0.38em, transparent 0.42em),
+    radial-gradient(circle at 12% 62%, rgba(255, 255, 255, 0.45) 0 0.3em, transparent 0.34em),
+    linear-gradient(135deg, var(--green-light), var(--green-deep));
+  border: 0.19em solid var(--white);
+  box-shadow: 0 1em 2.1em rgba(1, 40, 1, 0.4);
+}
+
+.washcard-graphic__title {
+  position: absolute;
+  left: 1em;
+  top: 1em;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.55em;
+  line-height: 1;
+  text-align: left;
+  text-transform: uppercase;
+  color: var(--white);
+  text-shadow: 0 0.08em 0 rgba(1, 77, 1, 0.4);
+}
+
+.washcard-graphic__mascot {
+  position: absolute;
+  right: -0.6em;
+  bottom: -0.9em;
+  width: 52%;
+}
+
+.washcard__card {
+  transform: rotate(-4deg);
+}
+
+/* Kleines Kartensymbol (Zahlungsarten) */
+.washcard-graphic--mini {
+  font-size: 5.6px;
+  border-width: 1.5px;
+  box-shadow: 0 4px 10px rgba(1, 40, 1, 0.3);
+  transform: rotate(-4deg);
+}
+
+.payment-tile__logo--card {
+  display: grid;
+  place-items: center;
+}
+
+.washcard__text h3 {
+  margin: 0 0 0.6rem;
+  font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+  line-height: 1.15;
+  color: var(--white);
+}
+
+.washcard__benefits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.washcard__benefits li {
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+  font-weight: 800;
+}
+
+.washcard__benefits li::before {
+  content: '\2713\00a0';
+}
+
+.washcard__note {
+  display: inline-block;
+  margin: 1rem 0 0;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--white);
+  border-bottom: 3px solid var(--lime);
+}
+
+/* ---------- Fahrzeug-Hinweise ---------- */
+.vehicle-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.vehicle-diagram {
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  margin: 0.25rem auto 1rem;
+  height: auto;
+  overflow: visible;
+}
+
+.vehicle-diagram__tire {
+  fill: #1b1c1c;
+}
+
+.vehicle-diagram__tread {
+  stroke: #3d403e;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.vehicle-diagram__crease {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.14);
+  stroke-width: 2;
+}
+
+.vehicle-diagram__shine {
+  fill: rgba(255, 255, 255, 0.55);
+}
+
+.vehicle-diagram__light {
+  fill: #f4f7f8;
+}
+
+.vehicle-diagram__led {
+  fill: none;
+  stroke: #9fd3ff;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.vehicle-diagram__grille {
+  fill: #18191a;
+}
+
+.vehicle-diagram__slats {
+  stroke: #575b59;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+}
+
+.vehicle-diagram__badge {
+  fill: var(--green-light);
+  stroke: #18191a;
+  stroke-width: 2;
+}
+
+.vehicle-diagram__plate {
+  fill: #ffffff;
+  stroke: #b9bfbc;
+  stroke-width: 1;
+}
+
+.vehicle-diagram__bumper {
+  fill: #303331;
+}
+
+.vehicle-diagram__ground {
+  stroke: #8f9a94;
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.vehicle-diagram__guide {
+  stroke: #9aa59f;
+  stroke-width: 1.5;
+  stroke-dasharray: 4 4;
+}
+
+.vehicle-diagram__dim {
+  stroke: var(--green);
+  stroke-width: 2.6;
+}
+
+.vehicle-diagram__arrowhead {
+  fill: var(--green);
+}
+
+.vehicle-diagram__pill rect {
+  fill: #ffffff;
+  stroke: rgba(198, 40, 40, 0.35);
+  stroke-width: 1.5;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.12));
+}
+
+.vehicle-diagram__pill text {
+  font-family: var(--font-display);
+  font-size: 20px;
+  fill: #c62828;
+}
+
+.dimension-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dimension-list li {
+  padding: 0.55rem 0.8rem;
+  border-radius: 12px;
+  background: var(--green-soft);
+  font-weight: 800;
+  color: var(--green-deep);
+}
+
+.dimension-list span {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #5c6b5a;
+}
+
+.vehicle-card__note {
+  margin: 0.9rem 0 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #555;
+}
+
+.vehicle-aside {
+  display: grid;
+  gap: 1rem;
+}
+
+.help-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  overflow: hidden;
+}
+
+.help-card__mascot {
+  flex: none;
+  width: 92px;
+  margin: -0.4rem 0 -1.4rem -0.5rem;
+  align-self: flex-end;
+}
+
+.help-card h3 {
+  margin: 0 0 0.25rem;
+}
+
+.help-card p {
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.help-card a {
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+/* ---------- Förderband-Hinweise ---------- */
+.guide {
+  margin-top: 2.5rem;
+}
+
+.guide__intro {
+  text-align: center;
+  margin-bottom: 1.1rem;
+}
+
+.guide__intro h3 {
+  margin: 0 0 0.3rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--green);
+  text-transform: uppercase;
+}
+
+.guide__intro p {
+  margin: 0;
+  color: #666;
+}
+
+/* Regeln wie auf dem Portal */
+.guide__rules {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0 auto 1.5rem;
+  padding: 0.85rem 1rem;
+  list-style: none;
+  max-width: 900px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, var(--green-light), var(--green-deep));
+  box-shadow: var(--shadow);
+}
+
+.guide__rules li {
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+  font-style: italic;
+}
+
+.guide__cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.guide-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.3rem;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(2, 138, 2, 0.1);
+  border-top: 5px solid var(--green);
+}
+
+.guide-card--prep {
+  background: var(--green-soft);
+}
+
+.guide-card__head {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.9rem;
+}
+
+.guide-card__head h4 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.35rem;
+  line-height: 1.1;
+  color: var(--green-dark);
+}
+
+.guide-card__head h4 span {
+  display: block;
+  font-family: var(--font);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #6b766a;
+}
+
+.guide-card__icon {
+  flex: none;
+  width: 52px;
+  height: 52px;
+  padding: 6px;
+  border-radius: 14px;
+  background: var(--white);
+  border: 2px solid rgba(2, 138, 2, 0.18);
+}
+
+.guide-card--prep .guide-card__icon {
+  background: var(--white);
+}
+
+.guide-card__icon-line {
+  fill: none;
+  stroke: #2d2f2e;
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.guide-card__icon-dots {
+  fill: #2d2f2e;
+}
+
+.guide-card__icon-knob {
+  fill: var(--green-light);
+  stroke: #2d2f2e;
+  stroke-width: 2.5;
+}
+
+.guide-card__icon-frame {
+  fill: none;
+  stroke: #2d2f2e;
+  stroke-width: 2.5;
+}
+
+.guide-card__icon-letters text,
+.guide-card__icon-n {
+  font-family: var(--font-display);
+  font-size: 12.5px;
+  text-anchor: middle;
+  fill: #8a948e;
+}
+
+.guide-card__icon-active {
+  fill: var(--green);
+}
+
+.guide-card__icon-n {
+  fill: var(--white);
+}
+
+.guide-card__icon-check {
+  fill: none;
+  stroke: var(--green-light);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.guide-card__steps {
+  counter-reset: step;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.guide-card__steps li {
+  counter-increment: step;
+  position: relative;
+  padding: 0.35rem 0 0.35rem 2.3rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.guide-card__steps li + li {
+  border-top: 1px dashed #e1e8df;
+}
+
+.guide-card__steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0.38rem;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--green);
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.guide-card__checks {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.guide-card__checks li {
+  position: relative;
+  padding: 0.35rem 0 0.35rem 1.8rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.guide-card__checks li::before {
+  content: '\2713';
+  position: absolute;
+  left: 0.2rem;
+  top: 0.3rem;
+  color: var(--green);
+  font-weight: 900;
+}
+
+.guide-card__note {
+  margin: 0.9rem 0 0;
+  padding: 0.7rem 0.85rem;
+  border-radius: 12px;
+  background: #fff7e0;
+  border-left: 4px solid var(--yellow);
+  font-size: 0.88rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: #5b4a12;
+}
+
+/* ---------- Zahlungsmöglichkeiten ---------- */
+.payment-list {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.payment-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.9rem 0.6rem;
+  border-radius: var(--radius);
+  background: var(--white);
+  border: 1px solid rgba(2, 138, 2, 0.12);
+  box-shadow: var(--shadow);
+  font-weight: 800;
+  font-size: 0.9rem;
+  line-height: 1.25;
+  text-align: center;
+  color: var(--grey);
+}
+
+.payment-tile__logo {
+  width: 100%;
+  max-width: 110px;
+  height: 58px;
+  object-fit: contain;
+}
+
+
+
 @media (max-width: 900px) {
   .hero__grid,
   .cards--4,
@@ -864,6 +1749,35 @@ main {
     grid-row: 1;
   }
 
+  .washcard__tiers,
+  .vehicle-grid,
+  .guide__cards {
+    grid-template-columns: 1fr;
+  }
+
+  .feature,
+  .feature--reverse {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .feature--reverse .feature__text {
+    order: 0;
+  }
+
+  .washcard__info {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .washcard__benefits {
+    justify-content: center;
+  }
+
+  .payment-list {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  }
+
   .footer__inner {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -881,14 +1795,6 @@ main {
   .footer__bottom-inner {
     flex-direction: column;
     text-align: center;
-  }
-
-  .header__nav {
-    display: none;
-  }
-
-  .header__inner {
-    justify-content: center;
   }
 
   .header__logo {
@@ -925,4 +1831,29 @@ main {
 /* Anker-Sprünge nicht unter dem fixierten Header verstecken */
 section[id] {
   scroll-margin-top: 80px;
+}
+
+@media (max-width: 520px) {
+  .washcard-tier {
+    grid-template-columns: 6.2rem 1fr auto;
+    gap: 0.5rem;
+    padding-right: 0.7rem;
+  }
+
+  .washcard-tier__arrow {
+    display: none;
+  }
+
+  .washcard-tier__charge,
+  .washcard-tier__credit {
+    font-size: 1.35rem;
+  }
+
+  .washcard-tier__bonus {
+    font-size: 1rem;
+  }
+
+  .washcard__card {
+    font-size: 13.7px;
+  }
 }

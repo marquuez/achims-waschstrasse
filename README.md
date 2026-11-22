@@ -44,7 +44,9 @@ npm run preview
 
 ## Inhalte anpassen
 
-- Kontakt, Öffnungszeiten, Preise: `src/data/site.js`
+- Kontakt, Öffnungszeiten, Preise, Fahrzeugmaße, Zahlungsarten, Waschkarte, Impressum: `src/data/site.js`
+- Logos der Zahlungsarten: `public/payment/`
+- Schriftarten (Lilita One, Pacifico, Nunito) werden lokal über `@fontsource` ausgeliefert – siehe `src/fonts.js`. Bitte keine Google-Fonts-Links in `index.html` einfügen (Datenschutz).
 - Instagram-Link: Feld `instagram` in `src/data/site.js`
 - Logo: `public/logo.png` (grünes Banner mit Waschbär). Daraus erzeugt `npm run brand:assets` die Grafiken `logo-banner.png`, `wordmark.png` (Header/Footer), `mascot.png` (Startseite) und `favicon.png`.
 - Achtung: `npm run logo:cut` überschreibt `public/logo.png` mit dem alten Logo aus `logo-source.png`.
@@ -55,3 +57,4 @@ npm run preview
 - `/` – Startseite
 - `/datenschutz` – Datenschutzerklärung
 - `/agb` – Allgemeine Geschäftsbedingungen
+- `/impressum` – Impressum

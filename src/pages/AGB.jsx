@@ -1,20 +1,25 @@
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { CONTACT } from '../data/site'
+import { CONTACT, IMPRINT } from '../data/site'
 
 export default function AGB() {
+  useEffect(() => {
+    document.title = "AGB – Achim's Waschstraße"
+  }, [])
+
   return (
     <article className="legal container">
       <Link to="/" className="legal__back">
         ← Zur Startseite
       </Link>
       <h1>Allgemeine Geschäftsbedingungen (AGB)</h1>
-      <p className="legal__updated">Stand: Oktober 2026</p>
+      <p className="legal__updated">Stand: November 2026</p>
 
       <section>
         <h2>1. Geltungsbereich</h2>
         <p>
           Diese Allgemeinen Geschäftsbedingungen gelten für die Nutzung der Waschstraße von
-          Achims Waschstrasse, {CONTACT.address}, {CONTACT.city}.
+          {IMPRINT.company}, {CONTACT.address}, {CONTACT.city}.
         </p>
       </section>
 

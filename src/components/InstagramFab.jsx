@@ -11,7 +11,11 @@ function InstagramIcon() {
   )
 }
 
+// Nur anzeigen, wenn ein echtes Profil hinterlegt ist (nicht nur instagram.com)
+const hasProfile = /instagram\.com\/[^/?#]+/i.test(CONTACT.instagram)
+
 export default function InstagramFab() {
+  if (!hasProfile) return null
   return (
     <a
       className="instagram-fab"

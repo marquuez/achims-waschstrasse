@@ -4,12 +4,6 @@ export function publicUrl(filePath) {
   return `${base}${path}`
 }
 
-export function homeHash(hash) {
-  const id = hash.replace(/^#/, '')
-  const base = import.meta.env.BASE_URL
-  return `${base}#${id}`
-}
-
 export function routerBasename() {
   const base = import.meta.env.BASE_URL
   if (!base || base === '/') return undefined

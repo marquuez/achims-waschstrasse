@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { CONTACT, OPENING_SUMMARY, TAX_INFO } from '../data/site'
-import { homeHash, publicUrl } from '../lib/publicUrl.js'
+import { publicUrl } from '../lib/publicUrl.js'
 
 export default function Footer() {
   const year = new Date().getFullYear()
@@ -39,9 +39,9 @@ export default function Footer() {
               <br />
               {OPENING_SUMMARY.note}
             </p>
-            <a className="footer__cta" href={homeHash('preise')}>
+            <Link className="footer__cta" to={{ pathname: '/', hash: '#preise' }}>
               Zu den Preisen
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -50,9 +50,10 @@ export default function Footer() {
         <div className="footer__bottom-inner container">
           <p className="footer__copy">© {year} Achim's Waschstraße</p>
           <p className="footer__legal">
-            {TAX_INFO.office} · St.-Nr.: {TAX_INFO.taxNumber} · USt.-IdNr.: {TAX_INFO.vatId}
+            USt.-IdNr.: {TAX_INFO.vatId}
           </p>
           <nav className="footer__links" aria-label="Rechtliches">
+            <Link to="/impressum">Impressum</Link>
             <Link to="/datenschutz">Datenschutz</Link>
             <Link to="/agb">AGB</Link>
           </nav>
