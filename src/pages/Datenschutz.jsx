@@ -4,7 +4,7 @@ import { CONTACT, IMPRINT } from '../data/site'
 
 export default function Datenschutz() {
   useEffect(() => {
-    document.title = "Datenschutz – Achim's Waschstraße"
+    document.title = "Datenschutz – Achims Waschstraße"
   }, [])
 
   return (

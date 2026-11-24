@@ -33,8 +33,8 @@ export default function Header() {
   return (
     <header className={`header${open ? ' header--open' : ''}`}>
       <div className="header__inner container">
-        <Link to="/" className="header__brand" aria-label="Achim's Waschstraße – zur Startseite">
-          <img src={publicUrl('wordmark.png')} alt="Achim's Waschstraße" className="header__logo" />
+        <Link to="/" className="header__brand" aria-label="Achims Waschstraße – zur Startseite">
+          <img src={publicUrl('wordmark.png')} alt="Achims Waschstraße" className="header__logo" />
         </Link>
         <button
           type="button"

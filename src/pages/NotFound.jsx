@@ -4,7 +4,7 @@ import { publicUrl } from '../lib/publicUrl.js'
 
 export default function NotFound() {
   useEffect(() => {
-    document.title = "Seite nicht gefunden – Achim's Waschstraße"
+    document.title = "Seite nicht gefunden – Achims Waschstraße"
   }, [])
 
   return (

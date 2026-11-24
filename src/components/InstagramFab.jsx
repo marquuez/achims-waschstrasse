@@ -22,7 +22,7 @@ export default function InstagramFab() {
       href={CONTACT.instagram}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Instagram – Achim's Waschstraße"
+      aria-label="Instagram – Achims Waschstraße"
       title="Instagram"
     >
       <InstagramIcon />

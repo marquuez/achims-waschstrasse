@@ -4,7 +4,7 @@ import { CONTACT, IMPRINT, TAX_INFO } from '../data/site'
 
 export default function Impressum() {
   useEffect(() => {
-    document.title = "Impressum – Achim's Waschstraße"
+    document.title = "Impressum – Achims Waschstraße"
   }, [])
 
   return (

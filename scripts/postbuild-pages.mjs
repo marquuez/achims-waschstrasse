@@ -17,18 +17,18 @@ const html = fs.readFileSync(index, 'utf8')
 const PAGES = [
   {
     file: 'impressum.html',
-    title: "Impressum – Achim's Waschstraße",
-    description: "Impressum von Achim's Waschstraße, Ernst-Reuter-Straße 74, 32257 Bünde.",
+    title: "Impressum – Achims Waschstraße",
+    description: "Impressum von Achims Waschstraße, Ernst-Reuter-Straße 74, 32257 Bünde.",
   },
   {
     file: 'datenschutz.html',
-    title: "Datenschutz – Achim's Waschstraße",
-    description: "Datenschutzerklärung von Achim's Waschstraße in Bünde.",
+    title: "Datenschutz – Achims Waschstraße",
+    description: "Datenschutzerklärung von Achims Waschstraße in Bünde.",
   },
   {
     file: 'agb.html',
-    title: "AGB – Achim's Waschstraße",
-    description: "Allgemeine Geschäftsbedingungen von Achim's Waschstraße in Bünde.",
+    title: "AGB – Achims Waschstraße",
+    description: "Allgemeine Geschäftsbedingungen von Achims Waschstraße in Bünde.",
   },
 ]
 

@@ -14,7 +14,7 @@ export default function Footer() {
         <div className="footer__inner container">
           <div className="footer__brand">
             <Link to="/" aria-label="Zur Startseite">
-              <img src={publicUrl('wordmark.png')} alt="Achim's Waschstraße" className="footer__logo" />
+              <img src={publicUrl('wordmark.png')} alt="Achims Waschstraße" className="footer__logo" />
             </Link>
             <p className="footer__slogan">Sauber ist schöner.</p>
           </div>
@@ -48,7 +48,7 @@ export default function Footer() {
 
       <div className="footer__bottom">
         <div className="footer__bottom-inner container">
-          <p className="footer__copy">© {year} Achim's Waschstraße</p>
+          <p className="footer__copy">© {year} Achims Waschstraße</p>
           <p className="footer__legal">
             USt.-IdNr.: {TAX_INFO.vatId}
           </p>

@@ -32,7 +32,7 @@ export const TAX_INFO = {
 
 // Impressum: Inhaber/in bzw. Vertretungsberechtigte/r (Pflichtangabe nach § 5 DDG)
 export const IMPRINT = {
-  company: "Achim's Waschstraße",
+  company: "Achims Waschstraße",
   owner: 'Geschäftsführer: Christof Lempa',
 }
 
@@ -150,9 +150,9 @@ export const PAYMENT_METHODS = [
   { name: 'UTA', logo: 'payment/uta.png' },
 ]
 
-// Achim's Waschkarte – Aufladen & Bonus sichern
+// Achims Waschkarte – Aufladen & Bonus sichern
 export const WASHCARD = {
-  title: "Achim's Waschkarte",
+  title: "Achims Waschkarte",
   claim: 'Aufladen & Waschbonus sichern!',
   tiers: [
     { charge: '50 €', credit: '52,50 €', bonus: '+5 %' },

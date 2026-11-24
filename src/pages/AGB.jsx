@@ -4,7 +4,7 @@ import { CONTACT, IMPRINT } from '../data/site'
 
 export default function AGB() {
   useEffect(() => {
-    document.title = "AGB – Achim's Waschstraße"
+    document.title = "AGB – Achims Waschstraße"
   }, [])
 
   return (

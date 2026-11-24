@@ -24,7 +24,7 @@ export default function Home() {
   )[0]
 
   useEffect(() => {
-    document.title = "Achim's Waschstraße – Bünde"
+    document.title = "Achims Waschstraße – Bünde"
   }, [])
 
   return (
@@ -37,7 +37,7 @@ export default function Home() {
             <p className="hero__eyebrow">Waschstraße in Bünde</p>
             <h1>Sauber ist schöner.</h1>
             <p className="hero__lead">
-              Willkommen bei Achim's Waschstraße – moderne Anlage, freundlicher Service und
+              Willkommen bei Achims Waschstraße – moderne Anlage, freundlicher Service und
               gründliche Pflege für Ihr Fahrzeug.
             </p>
             <div className="hero__actions">
@@ -52,7 +52,7 @@ export default function Home() {
           <div className="hero__visual">
             <img
               src={publicUrl('mascot.png')}
-              alt="Waschbär-Maskottchen von Achim's Waschstraße"
+              alt="Waschbär-Maskottchen von Achims Waschstraße"
               className="hero__mascot"
             />
           </div>
@@ -107,7 +107,7 @@ export default function Home() {
             <figure className="feature__media">
               <img
                 src={publicUrl('photos/aussenansicht.webp')}
-                alt="Außenansicht von Achim's Waschstraße mit grünem Schriftzug und Einfahrt"
+                alt="Außenansicht von Achims Waschstraße mit grünem Schriftzug und Einfahrt"
                 width="1280"
                 height="960"
                 loading="lazy"
@@ -283,7 +283,7 @@ export default function Home() {
         <div className="container">
           <header className="section__header">
             <h2>Zahlungsmöglichkeiten</h2>
-            <p>Bezahlen Sie bequem bar, mit Karte, mit Tankkarte oder mit Achim&apos;s Waschkarte.</p>
+            <p>Bezahlen Sie bequem bar, mit Karte, mit Tankkarte oder mit Achims Waschkarte.</p>
           </header>
           <ul className="payment-list">
             {PAYMENT_METHODS.map((method) => (
@@ -296,7 +296,7 @@ export default function Home() {
               <span className="payment-tile__logo payment-tile__logo--card">
                 <WashCardGraphic className="washcard-graphic--mini" />
               </span>
-              <span>Achim&apos;s Waschkarte</span>
+              <span>Achims Waschkarte</span>
             </li>
           </ul>
         </div>
