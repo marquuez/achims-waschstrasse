@@ -155,11 +155,13 @@ export default function Home() {
             {PRICING.map((plan, index) => (
               <article key={plan.name} className="pricing-row">
                 <div className="pricing-row__brand">
-                  <CarIcon variant={plan.icon} className="pricing-row__icon" />
-                  <div>
-                    <span className="pricing-row__number">{index + 1}.</span>
-                    <h3 className="pricing-row__name">{plan.name}</h3>
+                  <div className="pricing-row__media">
+                    <CarIcon variant={plan.icon} className="pricing-row__icon" />
+                    <span className="pricing-row__number" aria-label={`Programm ${index + 1}`}>
+                      {index + 1}
+                    </span>
                   </div>
+                  <h3 className="pricing-row__name">{plan.name}</h3>
                 </div>
                 <ul className="pricing-row__features">
                   {plan.features.map((feature) => (
